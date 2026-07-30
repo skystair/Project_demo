@@ -1,10 +1,12 @@
 --cpu Cortex-M3
 ".\objects\timerx.o"
+".\objects\boarddef.o"
 ".\objects\key.o"
 ".\objects\led.o"
-".\objects\dlibx.o"
+".\objects\modefunc.o"
 ".\objects\task_com1.o"
 ".\objects\task_mode.o"
+".\objects\dlibx.o"
 ".\objects\main.o"
 ".\objects\irq_armv7m.o"
 ".\objects\rtx_delay.o"

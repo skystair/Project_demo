@@ -1,13 +1,9 @@
-﻿#include "config.h"
+#include "config.h"
 
 LedStruct LEDstr[LEDNUM];
 
 void LEDxTESTctrl(unsigned char flag){
-    if(flag){
-        TEST_LED_ON;
-    }else{
-        TEST_LED_OFF;
-    }
+    Board_REG_out[IO_OUTch_LED_R] = (flag == 0);
 }
 //void LEDxRctrl(unsigned char flag){
 //    if(flag){
@@ -23,18 +19,14 @@ void LEDxinit(void){
         LEDstr[i].Flashondelay = LED_FLASH_ONDELAY;
         LEDstr[i].Flashoffdelay = LED_FLASH_OFFDELAY;
     }
-    LEDstr[LED_CH_W].pfunc = &LEDxTESTctrl;
+    LEDstr[IO_OUTch_LED_R].pfunc = &LEDxTESTctrl;
 //    LEDstr[LED_CH_R].pfunc = &LEDxRctrl;
 }
 
-void LEDxtick(void){
-    for(unsigned char i = 0; i< LEDNUM;i++){
-        LEDstr[i].Flashtick++;
-    }
-}
 
 void LEDxfunc(void){
     for(unsigned char i = 0; i< LEDNUM;i++){
+        LEDstr[i].Flashtick++;
         LED_statefunc(&LEDstr[i]);
     }
 }

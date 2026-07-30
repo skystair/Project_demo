@@ -18,11 +18,7 @@ void task_com1_creat(void){
 void task_com1(void *pvParameters){
     unsigned char flag = 0;
     while(1){
-        if(flag){
-            GPIO_SetBits(GPIOA,GPIO_Pin_8);
-        }else{
-            GPIO_ResetBits(GPIOA,GPIO_Pin_8);
-        }
+//        LEDxCtrl(IO_OUTch_LED_R,(flag!=0),0);
         osDelay(500);
         flag ^=1;
     }

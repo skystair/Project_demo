@@ -3,7 +3,7 @@
 
 #include "stm32f10x_conf.h"
 //#include "stm32f1xx_hal.h"
-#include "boardIO.h"
+#include "boarddef.h"
 
 #include "stdio.h"
 #include <stdlib.h> // malloc() free()
@@ -27,7 +27,7 @@
 
 #include "task_mode.h"
 #include "task_com1.h"
-
+#include "modefunc.h"
 
 //#include "Driver_GPIO.h"
 

@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB,STM32F10X_MD</Define>
               <Undefine></Undefine>
-              <IncludePath>.\_code;.\_code\STM32F1xx_HAL_Driver\Inc;.\_code\CORE;.\_code\bsp;.\_code\device;.\_code\func;.\_code\func\usb_hid;.\_code\func\usb_lib;.\_code\task</IncludePath>
+              <IncludePath>.\_code;.\_code\sys;.\_code\bsp;.\_code\device;.\_code\func;.\_code\task;.\_code\lib</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -389,6 +389,11 @@
               <FileType>1</FileType>
               <FilePath>.\_code\bsp\timerx.c</FilePath>
             </File>
+            <File>
+              <FileName>boarddef.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\_code\bsp\boarddef.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -410,9 +415,9 @@
           <GroupName>func</GroupName>
           <Files>
             <File>
-              <FileName>dlibx.c</FileName>
+              <FileName>modefunc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\_code\func\dlibx.c</FilePath>
+              <FilePath>.\_code\func\modefunc.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -428,6 +433,16 @@
               <FileName>task_mode.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\_code\task\task_mode.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lib</GroupName>
+          <Files>
+            <File>
+              <FileName>dlibx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\_code\lib\dlibx.c</FilePath>
             </File>
           </Files>
         </Group>

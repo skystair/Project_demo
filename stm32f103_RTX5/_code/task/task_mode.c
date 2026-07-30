@@ -14,18 +14,47 @@ void task_mode_creat(void){
     attr.priority   = TASK_MODE_PRIO;
     Task_mode_ID = osThreadNew(task_mode, NULL, &attr);
 }
-unsigned int testtick;
+
+Str_tick Tick_str;
+void tick_func(void);
+
 void task_mode(void *pvParameters){
-    unsigned char flag = 0;
     uint32_t tick = osKernelGetTickCount();
     while(1){
-        key_func();
+        tick_func();
 
-        if(keyXvalread(0,KEY_VAL_FLAG)){
-            flag ^=1;
-        }
-        testtick++;
+        key_func();
+        LEDxfunc();
+        
+        Board_func();       // REG_out → GPIO输出
+        
+        modefunc_func();    // Prefunc清零 → mode置1 → Lastfunc驱动刷新
+        
         tick += 1;
         osDelayUntil(tick);
+    }
+}
+
+
+
+static void tick1ms(void){
+}
+
+static void tick1s(void){
+    
+}
+void tick_init(void){
+    memset(&Tick_str,0,sizeof(Str_tick));
+
+}
+void tick_func(void){
+    tick1ms();
+    if(Tick_str.u32systick < 0xffff0000){
+        Tick_str.u32systick++;
+    }
+    Tick_str.u16_1mstick++;
+    if(Tick_str.u16_1mstick >= 1000){
+        Tick_str.u16_1mstick = 0;
+        tick1s();
     }
 }

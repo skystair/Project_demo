@@ -21,20 +21,15 @@ Target DLL:      Segger\JL2CM3.dll V2.99.45.0
 Dialog DLL:      TCM.DLL V1.56.6.0
  
 <h2>Project:</h2>
-E:\sources\Project_demo\stm32f103_RTX5\stm32f103.uvprojx
-Project File Date:  07/20/2026
+E:\sources\modules\USB_hid\stm32f103.uvprojx
+Project File Date:  07/30/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.24', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-compiling timerx.c...
-compiling key.c...
-compiling led.c...
-compiling main.c...
-compiling task_com1.c...
 compiling task_mode.c...
 linking...
-Program Size: Code=9184 RO-data=548 RW-data=168 ZI-data=5080  
+Program Size: Code=9544 RO-data=572 RW-data=184 ZI-data=6136  
 FromELF: creating hex file...
 ".\Objects\stm32f103.axf" - 0 Error(s), 0 Warning(s).
 
@@ -52,10 +47,10 @@ Package Vendor: ARM
    * Component: RTOS2 Version: 2.3.0
 
 Package Vendor: ARM
-                https://www.keil.com/pack/ARM.CMSIS-RTX.5.9.0.pack
-                ARM::CMSIS-RTX@5.9.0
-                RTX RTOS implementation of CMSIS-RTOS2 API
-   * Component: Keil RTX5 Variant: Source Version: 5.9.0
+                https://www.keil.com/pack/ARM.CMSIS-RTX.5.9.1.pack
+                ARM::CMSIS-RTX@5.9.1
+                Keil RTX5 RTOS implementation of CMSIS-RTOS2 API
+   * Component: Keil RTX5 Variant: Source Version: 5.9.1
 
 Package Vendor: Keil
                 https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
@@ -72,7 +67,7 @@ Package Vendor: Keil
   ./RTE/CMSIS
   ./RTE/Device/STM32F103C8
   ./RTE/_Target_1
-  C:/Users/dhz/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include
+  C:/Users/dhz/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.1/Include
   C:/Users/dhz/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include
   C:/Users/dhz/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Driver/Include
   C:/Users/dhz/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/RTOS2/Include
@@ -89,33 +84,33 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:OS Tick:SysTick@1.0.5
       Source file:   CMSIS/RTOS2/Source/os_systick.c
 
-   * Component: ARM::CMSIS:RTOS2:Keil RTX5&Source@5.9.0
-      Include file:  Config/RTX_Config.h
-      Source file:   Source/rtx_timer.c
-      Source file:   Source/rtx_delay.c
-      Source file:   Source/rtx_msgqueue.c
+   * Component: ARM::CMSIS:RTOS2:Keil RTX5&Source@5.9.1
       Source file:   Source/rtx_mutex.c
+      Source file:   Source/rtx_thread.c
+      Source file:   Source/rtx_msgqueue.c
+      Source file:   Source/rtx_delay.c
+      Source file:   Config/RTX_Config.c
+      Source file:   Source/rtx_semaphore.c
+      Source file:   Source/rtx_evr.c
+      Source file:   Source/rtx_lib.c
+      Source file:   Template/MsgQueue.c
+      Source file:   Source/GCC/irq_armv7m.S
+      Source file:   Source/rtx_mempool.c
+      Source file:   Template/MemPool.c
+      Source file:   Source/rtx_timer.c
       Source file:   Source/rtx_kernel.c
       Source file:   Source/rtx_evflags.c
-      Source file:   Source/rtx_evr.c
-      Source file:   Template/Semaphore.c
-      Source file:   Template/main.c
-      Source file:   Template/MsgQueue.c
-      Source file:   Template/Mutex.c
-      Source file:   Template/svc_user.c
-      Include file:  Include/rtx_os.h
       Source file:   Source/rtx_memory.c
-      Source file:   Source/rtx_semaphore.c
-      Source file:   Source/rtx_mempool.c
-      Source file:   Template/Timer.c
-      Source file:   Source/rtx_lib.c
-      Source file:   Source/GCC/irq_armv7m.S
-      Source file:   Source/rtx_thread.c
-      Source file:   Source/rtx_system.c
-      Source file:   Template/Events.c
-      Source file:   Config/RTX_Config.c
-      Source file:   Template/MemPool.c
       Source file:   Template/Thread.c
+      Source file:   Source/rtx_system.c
+      Source file:   Template/main.c
+      Source file:   Template/Events.c
+      Include file:  Config/RTX_Config.h
+      Source file:   Template/Mutex.c
+      Source file:   Template/Semaphore.c
+      Include file:  Include/rtx_os.h
+      Source file:   Template/Timer.c
+      Source file:   Template/svc_user.c
 
    * Component: CMSIS Driver:GPIO(API)@1.0.0
       Include file:  CMSIS/Driver/Include/Driver_GPIO.h
@@ -127,14 +122,14 @@ Package Vendor: Keil
       Include file:  CMSIS/RTOS2/Include/cmsis_os2.h
 
    * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/system_stm32f10x.c
       Source file:   Device/Source/ARM/STM32F1xx_OPT.s
       Source file:   Device/Source/ARM/startup_stm32f10x_md.s
-      Source file:   Device/Source/system_stm32f10x.c
       Include file:  RTE_Driver/Config/RTE_Device.h
 
    * Component: Keil::Device:StdPeriph Drivers:FSMC@3.6.0
-      Source file:   Device/StdPeriph_Driver/src/stm32f10x_fsmc.c
       Include file:  Device/StdPeriph_Driver/inc/stm32f10x_fsmc.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_fsmc.c
 
    * Component: Keil::Device:StdPeriph Drivers:Framework@3.6.0
       Source file:   Device/StdPeriph_Driver/templates/stm32f10x_conf.h
@@ -144,12 +139,12 @@ Package Vendor: Keil
       Include file:  Device/StdPeriph_Driver/inc/misc.h
 
    * Component: Keil::Device:StdPeriph Drivers:GPIO@3.6.0
-      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_gpio.h
       Source file:   Device/StdPeriph_Driver/src/stm32f10x_gpio.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_gpio.h
 
    * Component: Keil::Device:StdPeriph Drivers:RCC@3.6.0
-      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rcc.h
       Source file:   Device/StdPeriph_Driver/src/stm32f10x_rcc.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rcc.h
 
    * Component: Keil::Device:StdPeriph Drivers:TIM@3.6.0
       Include file:  Device/StdPeriph_Driver/inc/stm32f10x_tim.h
